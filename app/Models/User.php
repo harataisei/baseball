@@ -41,4 +41,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function batter_glade()
+    {
+        return $this -> hasone(batter_glade::class);
+    }
+    
+     public function picher_glade()
+    {
+        return $this -> hasone(picher_glade::class);
+    }
 }
+
