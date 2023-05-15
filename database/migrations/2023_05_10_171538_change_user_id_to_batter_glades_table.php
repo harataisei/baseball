@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pichers', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('batter_glades', function (Blueprint $table) {
+            //
+            $table->foreignid('user_id')->nullable()->change();
+            
         });
     }
 
@@ -26,6 +27,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pichers');
+        Schema::table('batter_glades', function (Blueprint $table) {
+            //
+            $table->string('field')->change();
+        });
     }
 };

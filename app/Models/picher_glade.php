@@ -13,4 +13,6 @@ class picher_glades extends Model
     {
         return $this -> belongsto(user::class);
     }
+    
+   
 }
