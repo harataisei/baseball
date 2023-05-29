@@ -2,13 +2,32 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+          <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <title>打撃成績</title>
+        <style>
+        body{
+            background-color:pink;
+            margin : 50px;
+            text-align:center;
+        }
+           
+           .ba{
+               background-color:#bce2e8;
+           }
+           </style>
     </head>
     <body>
+        <div class='ba'>
         <h3>打撃成績</h3>
+        </div>
+        <br></br>
+        
+  
          <form action="/scores/{{$BatterGlade->id}}" method="POST">
             @csrf
              @method('PUT')
+             
           
              <div class="AB">
                  <h3>打席数</h3>
@@ -42,6 +61,7 @@
                <div class="footer">
             <a href="/">戻る</a>
         </div>
+        
         
     </body>
     </html>

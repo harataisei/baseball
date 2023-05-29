@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('batter_glades', function (Blueprint $table) {
-            //
-            $table->foreignid('user_id')->nullable()->change();
-            
+        //
+         Schema::table('pitcher_glades', function (Blueprint $table) {
+            $table->renameColumn('SO/9', 'so9');
         });
     }
 
@@ -27,9 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('batter_glades', function (Blueprint $table) {
-            //
-            $table->string('field')->change();
-        });
+        //
     }
 };
