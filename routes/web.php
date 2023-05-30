@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\gladeController;  
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [gladeController::class,'index']);
+Route::get('/scores/{BatterGlade}/edit', [gladeController::class, 'b_input']);
+Route::get('/scores/{PitcherGlade}/edit/pitcher',[gladeController::class,'p_input']);
+Route::get('/scores/{BatterGlade}/batter_individual',[gladeController::class,'b_individual']);
+Route::get('/scores/{PitcherGlade}/pitcher_individual',[gladeController::class,'p_individual']);
+Route::put('/scores/{BatterGlade}', [gladeController::class, 'update']);
+Route::put('/scores/{PitcherGlade}/pitcher',[gladeController::class,'p_update']);
